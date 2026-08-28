@@ -50,5 +50,8 @@ android {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
-    implementation "com.my.tracker:mytracker-sdk:[3.5.0,3.6.0)"
+    // MyTracker 3.5.x тянет com.android.billingclient:billing 7.1.1, который
+    // Google Play помечает как устаревший и блокирует обновления приложений.
+    // 3.6.0 собран под billing 9.1.0.
+    implementation "com.my.tracker:mytracker-sdk:[3.6.0,3.7.0)"
 }
